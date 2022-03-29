@@ -169,7 +169,7 @@ mod tests {
 
     #[test]
     fn div_u64() {
-        let n: u32 = 1000;
+        let n: u64 = 1000;
         for j in 2..n {
             let p = j.precompute_div();
             for i in 0..n {
