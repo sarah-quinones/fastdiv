@@ -11,7 +11,7 @@ pub fn criterion_benchmark(c: &mut Criterion) {
             b.iter(|| black_box(black_box(n).fast_div(precomputed)))
         });
         c.bench_function("slow div u32", |b| b.iter(|| black_box(black_box(n) / d)));
-        c.bench_function("compiler div u32", |b| {
+        c.bench_function("const div u32", |b| {
             b.iter(|| black_box(black_box(n) / 3))
         });
 
@@ -19,7 +19,7 @@ pub fn criterion_benchmark(c: &mut Criterion) {
             b.iter(|| black_box(black_box(n).fast_mod(precomputed, d)))
         });
         c.bench_function("slow mod u32", |b| b.iter(|| black_box(black_box(n) % d)));
-        c.bench_function("compiler mod u32", |b| {
+        c.bench_function("const mod u32", |b| {
             b.iter(|| black_box(black_box(n) % 3))
         });
     }
@@ -32,7 +32,7 @@ pub fn criterion_benchmark(c: &mut Criterion) {
             b.iter(|| black_box(black_box(n).fast_div(precomputed)))
         });
         c.bench_function("slow div u64", |b| b.iter(|| black_box(black_box(n) / d)));
-        c.bench_function("compiler div u64", |b| {
+        c.bench_function("const div u64", |b| {
             b.iter(|| black_box(black_box(n) / 3))
         });
 
@@ -40,7 +40,7 @@ pub fn criterion_benchmark(c: &mut Criterion) {
             b.iter(|| black_box(black_box(n).fast_mod(precomputed, d)))
         });
         c.bench_function("slow mod u64", |b| b.iter(|| black_box(black_box(n) % d)));
-        c.bench_function("compiler mod u64", |b| {
+        c.bench_function("const mod u64", |b| {
             b.iter(|| black_box(black_box(n) % 3))
         });
     }
